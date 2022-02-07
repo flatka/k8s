@@ -12,5 +12,3 @@ spec:
    image: yanivomc/spring-music:latest
    ports: 
    - containerPort: 8080
-
-
