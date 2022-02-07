@@ -16,4 +16,4 @@ spec:
       mountPath: /storage
   volumes:
   - name: my-storage
-    hostPath: my-storage
+    hostPath: {}
