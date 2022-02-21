@@ -1,0 +1,41 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-with-auth
+  annotations:
+    # type of authentication
+    nginx.ingress.kubernetes.io/auth-type: basic
+    # name of the secret that contains the user/password definitions
+    nginx.ingress.kubernetes.io/auth-secret: basic-auth
+    # message to display with an appropriate context why the authentication is required
+    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - basic'
+    nginx.ingress.kubernetes.io/default-backend: default-backend 
+
+spec:
+  defaultBackend:
+    service:
+      name: default-backend
+      port:
+        number: 80        
+  ingressClassName: nginx
+  rules:
+  - host: bear.54.155.20.99.nip.io       
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+             name: bear
+             port:
+                number: 80
+  - host: moose.52.16.79.181.nip.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+             name: moose
+             port:
+                number: 80
