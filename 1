@@ -2,17 +2,16 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Chart.Name }}-{{ .Chart.Version }}
-  labels:
-  {{- include "spring.labels" . | nindent 4 }}
+  {{- include "spring.labels" . | nindent 2 }}
 spec:
   selector: 
     matchLabels:
-      {{- include "spring.labels" . | nindent 6 }}
+      {{- include "spring.labels" . | nindent 4}}
   replicas: {{ .Values.spec.replicas }}  
   template:
     metadata:
       labels:
-        {{- include "spring.labels" . | nindent 8 }}
+        {{- include "spring.labels" . | nindent 6}}
     spec:
       containers:
       - name: {{ .Values.spec.containers.name }}

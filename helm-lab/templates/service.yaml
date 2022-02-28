@@ -2,10 +2,9 @@ kind: Service
 apiVersion: v1     
 metadata:
   name: {{ .Release.Name }}-service
-  {{- include "spring.labels" . }}
 spec:
   selector:
-    {{- include "spring.labels" . | nindent 2}}
+    {{- include "spring.labels" . | nindent 4 }}
   {{ if eq .Values.ingress.enabled true }}
   type: "ClusterIP"
   {{ else }} 
