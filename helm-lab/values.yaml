@@ -1,4 +1,3 @@
-
 metadata:
   name: spring-music
 ingress:
@@ -14,4 +13,3 @@ spec:
     image: spring-music
     tag: latest
     containerPort: 8080
-~                            
