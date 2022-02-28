@@ -1,0 +1,6 @@
+dbname: "db_mysql"
+dbtable: "music"
+image: "yanivomc/spring-music"
+tag: "latest"
+
+
