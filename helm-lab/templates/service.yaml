@@ -1,0 +1,13 @@
+kind: Service      
+apiVersion: v1     
+metadata:
+  name: {{ .metadata.name }}-service
+spec:
+  selector:
+    app: music
+  type: {{ .spec.type }}  
+  ports:          
+  - name: http    
+    protocol: TCP
+    port: {{ .spec.port }}
+    targetPort: {{ .spec.targetPort }}

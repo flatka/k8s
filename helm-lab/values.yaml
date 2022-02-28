@@ -1,0 +1,15 @@
+
+metadata:
+  name: {{ Release.Name }}
+spec:
+  type: LoadBalancer
+  port: 80
+  targetPort: 8080
+  replicas: 1
+  containers:
+    name: spring-music
+    repo: yanivomc
+    image: spring-music
+    tag: latest
+    containerPort: 8080
+~                            
