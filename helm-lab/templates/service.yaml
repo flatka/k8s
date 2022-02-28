@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: music
-  type: {{ .Values.spec.type }}  
+  type: {{ if eq .Values.ingress.enabled "true" }} type: "ClusterIP" {{ end }}
   ports:          
   - name: http    
     protocol: TCP
