@@ -1,6 +1,6 @@
 
 metadata:
-  name: {{ Release.Name }}
+  name: spring-music
 spec:
   type: LoadBalancer
   port: 80
